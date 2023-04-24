@@ -20,6 +20,8 @@ import java.time.Duration;
 public class AnuncianteStepDefinitions {
     WebDriver driver;
     ChromeOptions options;
+    String urlBase = ("https://www.airbnb.com.br/");
+
 
     @Before
     public void setup() {
@@ -32,9 +34,10 @@ public class AnuncianteStepDefinitions {
         driver.quit();
     }
 
+
     @Dado("que usuario esta na homepage")
     public void que_usuario_esta_na_homepage() {
-        driver.get("https://www.airbnb.com.br/");
+        driver.get(urlBase);
     }
     @Quando("clicar sobre o botao anuncie seu espaco")
     public void clicar_sobre_o_botao_anuncie_seu_espaco() {
@@ -42,12 +45,12 @@ public class AnuncianteStepDefinitions {
     }
     @Entao("deverá ser redirecionado para pagina do anunciante")
     public void deverá_ser_redirecionado_para_pagina_do_anunciante() {
-        Assertions.assertEquals("https://www.airbnb.com.br/host/homes", driver.getCurrentUrl());
+        Assertions.assertEquals(urlBase + "host/homes", driver.getCurrentUrl());
     }
 
     @Dado("que na tela de anunciantes")
     public void que_na_tela_de_anunciantes() {
-        driver.get("http://www.airbnb.com.br/host/homes");
+        driver.get(urlBase + "/host/homes");
     }
     @Quando("clicar em simular o valor de hospedagens")
     public void clicar_em_simular_o_valor_de_hospedagens() {
@@ -64,7 +67,7 @@ public class AnuncianteStepDefinitions {
 
     @Dado("qua na tela do anunciante")
     public void qua_na_tela_do_anunciante() {
-        driver.get("http://www.airbnb.com.br/host/homes");
+        driver.get(urlBase + "host/homes");
         //driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
     }
     @Quando("clicar no botão Anuncio Facil AirBnb")
@@ -77,6 +80,36 @@ public class AnuncianteStepDefinitions {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("._u72b34")));
         Assertions.assertEquals("Bem-vindo ao Airbnb", driver.findElement(By.cssSelector("._u72b34")).getText());
     }
+
+    @Dado("que o usuario esteja na pagina inicial e nao esteja logado")
+    public void que_o_usuario_esteja_na_pagina_inicial_e_nao_esteja_logado() {
+        driver.get(urlBase);
+    }
+    @Quando("selecionar tipo de hospedagem")
+    public void selecionar_tipo_de_hospedagem() {
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.className("c1l3w0tx")));
+        driver.findElement(By.xpath("//*[text()=\"No interior\"]")).click();
+    }
+    @Entao("devera mostrar resultado de hospedagens conforme foi selecionado")
+    public void devera_mostrar_resultado_de_hospedagens_conforme_foi_selecionado() {
+        Assertions.assertEquals(driver.findElement(By.className("t1h65ots")).getText(), "Chalés");
+    }
+
+    @Dado("que o usuario esteja na pagina inicial")
+    public void que_o_usuario_esteja_na_pagina_inicial() {
+        driver.get(urlBase);
+    }
+    @Quando("clicar no filtro em qualquer lugar")
+    public void clicar_no_filtro_em_qualquer_lugar() {
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.className("c1l3w0tx")));
+        driver.findElement(By.xpath("//*[text()=\"Qualquer lugar\"]")).click();
+    }
+    @Entao("devera abrir um modal busque por regiao")
+    public void devera_abrir_um_modal_busque_por_regiao() {
+        Assertions.assertEquals(driver.findElement(By.className("l5mmcz9")).getText(), "Busque por região");
+
+    }
+
 
     @Dado("que na tela do aunciante")
     public void que_na_tela_do_aunciante() {
@@ -93,6 +126,7 @@ public class AnuncianteStepDefinitions {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(By.className("ebq526p")));
         Assertions.assertEquals("Entrar ou cadastrar-se", driver.findElement(By.cssSelector("ebq526p")).getText());
     }
+
 
 
 
