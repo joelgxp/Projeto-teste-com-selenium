@@ -66,4 +66,3 @@ r1: Deve ter um botão "anuncie seu espaço" na tela principal que redirecione p
 r2: Na tela de anunciantes deve ter uma simulação de valor da hospedagem com critérios como: localização, tipo de quarto e quantidade de hospedes
 Licença
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter
-
