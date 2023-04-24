@@ -106,19 +106,17 @@ public class AnuncianteStepDefinitions {
     }
     @Entao("devera abrir um modal busque por regiao")
     public void devera_abrir_um_modal_busque_por_regiao() {
-        Assertions.assertEquals(driver.findElement(By.className("l5mmcz9")).getText(), "Busque por região");
-
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.className("l5mmcz9")));
+        Assertions.assertEquals("Busque por região", driver.findElement(By.className("l5mmcz9")).getText());
     }
-
 
     @Dado("que na tela do aunciante")
     public void que_na_tela_do_aunciante() {
-        driver.get("http://www.airbnb.com.br/host/homes");
+        driver.get(urlBase + "host/homes");
     }
     @Quando("clicar no botão Converse com o superhost")
     public void clicar_no_botão_converse_com_o_superhost() {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div/div/div/div/button")));
-        //driver.findElement(By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div/div/div/div/button")).click();
         driver.findElement(By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div/div/div/div/button")).isDisplayed();
     }
     @Entao("deve abrir um modal Entrar ou cadastrar-se")
