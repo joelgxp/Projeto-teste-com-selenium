@@ -18,6 +18,6 @@ Funcionalidade:Como usuário, mesmo que não esteja logado,
     Então a página deve exibir propriedades do tipo Microcasas
 
   Cenário: verificar se a aba de filtros fecha após click no 'x'
-    Dado que abro a sessão de filtros
+    Dado que abro o link de filtros
     Quando clico no 'x' para fechar
     Então a aba de filtros se fecha
