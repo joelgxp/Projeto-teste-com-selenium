@@ -3,8 +3,11 @@ Este projeto foi desenvolvido durante o Curso de Automação de Testes do Santan
 
 # Autores
 Carla S. Nonaka - carlasnonaka
+
 Elaine Lima S Seixas - ElaineLimaSeixas
+
 Daniel de Mesquita - demesquitadaniel
+
 Joel Souza - joelgxp
 
 # Requisitos do projeto:
