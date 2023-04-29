@@ -1,6 +1,12 @@
 # Projeto de Testes com Selenium para o Site Airbnb
 Este projeto foi desenvolvido durante o Curso de Automação de Testes do Santander Coders 2022. O objetivo do projeto é realizar testes funcionais usando cucumber + selenium para o site AirBnb.
 
+# Autores
+Carla S. Nonaka - carlasnonaka
+Elaine Lima S Seixas - ElaineLimaSeixas
+Daniel de Mesquita - demesquitadaniel
+Joel Souza - joelgxp
+
 # Requisitos do projeto:
 
 Cenários escritos em Gherkin
@@ -78,3 +84,5 @@ r2: Na tela de anunciantes deve ter uma simulação de valor da hospedagem com c
 Licença
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter
 
+# Expressões de gratidão
+Agradecimento ao professor do módulo sobre Selenium / Webdriver - Igor Dantas - igorfdantass.
