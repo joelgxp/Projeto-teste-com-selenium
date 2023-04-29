@@ -1,5 +1,17 @@
 # Projeto de Testes com Selenium para o Site Airbnb
-Este projeto foi desenvolvido durante o Curso de Automação de Testes do Santander Coders 2022. O objetivo do projeto é realizar testes automatizados para o site AirBnb utilizando o Chrome Driver, JUnit 5 e Cucumber.
+Este projeto foi desenvolvido durante o Curso de Automação de Testes do Santander Coders 2022. O objetivo do projeto é realizar testes funcionais usando cucumber + selenium para o site AirBnb.
+
+# Requisitos do projeto:
+
+Cenários escritos em Gherkin
+
+Priorização de execução de testes utilizando tags (Smoke, Regression, etc)
+
+Sincronismo de testes
+
+Geração de relatórios
+
+Opcional: Captura de evidências em casos de erros (Screenshots)
 
 # Pré-requisitos
 Antes de executar o projeto, é necessário ter instalado em sua máquina:
