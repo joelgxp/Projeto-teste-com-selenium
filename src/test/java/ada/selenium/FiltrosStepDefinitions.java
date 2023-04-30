@@ -26,6 +26,7 @@ public class FiltrosStepDefinitions {
     }
 
     // Cenário: O filtro padrão deve ser "Praia"
+
     @Dado("que estou na página inicial")
     public void paginaInicial() {
         driver.get("https://www.airbnb.com.br/");
@@ -35,7 +36,7 @@ public class FiltrosStepDefinitions {
 
     @Entao("o filtro carregado deve ser Praia")
     public void filtroPadraoPraia() {
-        WebElement praiaFilter = driver.findElement(By.xpath("//span[text()='Praia']"));
+        WebElement praiaFilter = driver.findElement(By.xpath("//*[text()='Praia']"));
         Assertions.assertTrue(praiaFilter.isSelected());
     }
 
@@ -59,6 +60,7 @@ public class FiltrosStepDefinitions {
     @E("quando eu clicar sobre o filtro 'Microcasas'")
     public void quandoEuClicarSobreOFiltroMicrocasas() {
         microcasaFilter = driver.findElement(By.xpath("//span[text()='Microcasas']"));
+        microcasaFilter.click();
     }
 
     @Então("a página deve exibir propriedades do tipo Microcasas")
