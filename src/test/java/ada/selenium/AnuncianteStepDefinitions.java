@@ -18,22 +18,8 @@ import javax.lang.model.element.Element;
 import java.time.Duration;
 
 public class AnuncianteStepDefinitions {
-    WebDriver driver;
-    ChromeOptions options;
+    WebDriver driver = Hooks.getDriver();
     String urlBase = ("https://www.airbnb.com.br/");
-
-
-    @Before
-    public void setup() {
-        options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driver = WebDriverManager.chromedriver().capabilities(options).create();
-    }
-    @After
-    public void after() {
-        driver.quit();
-    }
-
 
     @Dado("que usuario esta na homepage")
     public void que_usuario_esta_na_homepage() {
@@ -116,8 +102,8 @@ public class AnuncianteStepDefinitions {
     }
     @Quando("clicar no botão Converse com o superhost")
     public void clicar_no_botão_converse_com_o_superhost() {
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div/div/div/div/button")));
-        driver.findElement(By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div/div/div/div/button")).isDisplayed();
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.className("cl99u42")));
+        driver.findElement(By.xpath("//*[text()=\"Converse com um Superhost\"]")).click();
     }
     @Entao("deve abrir um modal Entrar ou cadastrar-se")
     public void deve_abrir_um_modal_entrar_ou_cadastrar_se() {
